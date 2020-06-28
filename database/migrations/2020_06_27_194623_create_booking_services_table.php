@@ -21,8 +21,8 @@ class CreateBookingServicesTable extends Migration
             $table->integer('booking_id')->unsigned()->nullable();
             $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
 
-            $table->integer('price_id')->unsigned()->nullable();
-            $table->foreign('price_id')->references('id')->on('services')->onDelete('cascade');
+            $table->integer('service_id')->unsigned()->nullable();
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
     }
     }

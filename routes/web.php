@@ -1,7 +1,26 @@
 <?php
-Route::get('/', function () {
+Route::get('/admin', function () {
     return redirect('/admin/home');
 });
+Route::get('/', function () {
+    return view('/index');
+});
+Route::get('/contact', function () {
+    return view('/contact');
+});
+Route::get('/activities', function () {
+    return view('/activities');
+});
+Route::get('/details', function () {
+    return view('/details');
+});
+Route::get('/reservation', function () {
+    return view('/reservation');
+});
+    Route::get('/rooms', function () {
+        return view('/rooms');
+    });
+   
 
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
