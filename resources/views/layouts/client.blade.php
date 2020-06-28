@@ -71,12 +71,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="h_right">
 			<!--start menu -->
+			<?php
+      // On recupere l'URL de la page pour ensuite affecter class = "active" aux liens de nav
+      $page = $_SERVER['REQUEST_URI'];
+	  $page = str_replace("/siteyetistudio/", "",$page); ?>
+	  
 			<ul class="menu">
-				<li class="active"><a href="/">hotel</a></li> |
-				<li><a href="rooms">rooms & suits</a></li> |
-				<li><a href="reservation">reservation</a></li> |
-				<li><a href="activities">activities</a></li> |
-				<li><a href="contact">contact</a></li>
+				<li <?php if($page == "/"){echo 'class="active"';} ?>><a href="/">hotel</a></li> |
+				<li <?php if($page == "/rooms"){echo 'class="active"';} ?>><a href="rooms">rooms & suits</a></li> |
+				<li <?php if($page == "/reservation"){echo 'class="active"';} ?>><a href="reservation">reservation</a></li> |
+				<li <?php if($page == "/activities"){echo 'class="active"';} ?>><a href="activities">activities</a></li> |
+				<li <?php if($page == "/contact"){echo 'class="active"';} ?>><a href="contact">contact</a></li>
 				<div class="clear"></div>
 			</ul>
 			<!-- start profile_details -->
@@ -98,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="top-nav">
 		<nav class="clearfix">
 				<ul>
-				<li class="active"><a href="/">hotell</a></li> 
+				<li class="active"><a href="/">hotel</a></li> 
 				<li><a href="rooms">rooms & suits</a></li> 
 				<li><a href="reservation">reservation</a></li> 
 				<li><a href="activities">activities</a></li> 
@@ -124,6 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="rooms">rooms & suits</a></li>
 					<li><a href="reservation">reservation</a></li>
 					<li><a href="contact">Contact</a></li>
+					<li><a href="/admin">Administration</a></li>
 				</ul>
 			</div>
 			<div class="soc_icons">
