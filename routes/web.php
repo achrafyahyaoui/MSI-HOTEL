@@ -2,9 +2,8 @@
 Route::get('/admin', function () {
     return redirect('/admin/home');
 });
-Route::get('/', function () {
-    return view('/index');
-});
+Route::get('/','AcceuilclientController@index');
+
 Route::get('/contact', function () {
     return view('/contact');
 });
