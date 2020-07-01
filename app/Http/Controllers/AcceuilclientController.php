@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\room_picture;
+use App\room_price;
 
 class AcceuilclientController extends Controller
 {
@@ -16,7 +18,16 @@ class AcceuilclientController extends Controller
     {
         $Category = new Category;
         $Categories = Category::all();
-        return view('clientspace.index', compact('Categories'));
+
+        $room_picture = new Room_picture;
+        $room_pictures = Room_picture::all();
+
+        $room_price = new room_price;
+        $room_prices = room_price::all();
+
+        return view('clientspace.index', compact('Categories'))
+                    ->with('room_pictures',$room_pictures)
+                    ->with('room_prices',$room_prices);
     }
 
     /**
