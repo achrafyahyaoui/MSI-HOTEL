@@ -95,7 +95,7 @@
 				<li class="span1_of_3">
 					<div class="date_btn">
 						<form>
-							<input type="submit" value="book now" />
+							<input type="submit" value="check availibility" />
 						</form>
 					</div>
 				</li>
@@ -105,38 +105,50 @@
 		<div class="clear"></div>
 		</div>
 	</div>
-	<!--start grids_of_3 -->
+
 	<div class="grids_of_3">
+	
+	
+	@foreach($Categories as $Categorie)
+	<?php 
+
+		$picture="";
+		$price = "";
+
+	?>
+
+	@foreach($room_pictures as $room_picture)
+		<?php 
+		
+		if ($room_picture->category_id === $Categorie->id){
+			$picture = $room_picture->picture;
+		}
+		?>
+	@endforeach
+
+	@foreach($room_prices as $room_price)
+		<?php 
+		
+		if ($room_price->category_id === $Categorie->id){
+			$price = $room_price->price;
+		}
+		?>
+	@endforeach
+	<!--start grids_of_3 -->
+		
 		<div class="grid1_of_3">
 			<div class="grid1_of_3_img">
 				<a href="details">
-					<img src="assets/images/pic2.jpg" alt="" />
+					<img src="{{ $picture}}" alt="" />
 					<span class="next"> </span>
 				</a>
 			</div>
-			<h4><a href="#">single room<span>120$</span></a></h4>
+			<h4><a href="#">{{ucfirst(trim($Categorie->name))}}<span>{{$price}} Dhs</span></a></h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 		</div>
-		<div class="grid1_of_3">
-			<div class="grid1_of_3_img">
-				<a href="details">
-					<img src="assets/images/pic1.jpg" alt="" />
-					<span class="next"> </span>
-				</a>
-			</div>
-			<h4><a href="#">double room<span>180$</span></a></h4>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		</div>
-		<div class="grid1_of_3">
-			<div class="grid1_of_3_img">
-				<a href="details">
-					<img src="assets/images/pic3.jpg" alt="" />
-					<span class="next"> </span>
-				</a>
-			</div>
-			<h4><a href="#">suite room<span>210$</span></a></h4>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-		</div>
+
+	@endforeach
+
 		<div class="clear"></div>
 	</div>	
 </div>
