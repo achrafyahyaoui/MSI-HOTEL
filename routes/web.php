@@ -7,6 +7,16 @@ Route::get('/','AcceuilclientController@index');
 Route::get('/contact', function () {
     return view('/contact');
 });
+
+Route::get('/register', function () {
+    return view('/auth/register');
+});
+
+//Route::post('/register', 'Auth\registerController');
+$this->post('register', 'Auth\registerController@validate')->name('auth.register');
+
+Route::get('/acceuilclient','AcceuilclientController@index')->middleware('auth','admin');
+
 Route::get('/activities', function () {
     return view('/activities');
 });

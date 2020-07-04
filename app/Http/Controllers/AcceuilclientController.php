@@ -21,7 +21,7 @@ class AcceuilclientController extends Controller
 
         $room_picture = new Room_picture;
         $room_pictures = Room_picture::all();
-
+        // Reste de determiner les prix en vigeur
         $room_price = new room_price;
         $room_prices = room_price::all();
 
