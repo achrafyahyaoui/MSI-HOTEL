@@ -4,6 +4,9 @@ Route::get('/admin', function () {
 });
 Route::get('/','AcceuilclientController@index');
 
+Route::get('/reservations', function () {
+    return view('/reservations');
+});
 Route::get('/contact', function () {
     return view('/contact');
 });
