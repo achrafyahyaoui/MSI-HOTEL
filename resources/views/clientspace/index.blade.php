@@ -7,7 +7,7 @@
 		        <div class="slider_container">
 		            <div class="slide"> 
 		                <!-- Slide image -->
-		                    <img src="assets/images/slider-bg.jpg" alt=""/>
+		                    <img src="images/slider-bg.jpg" alt=""/>
 		                <!-- /Slide image -->
 		                <!-- Texts container -->
 		                <div class="slide_content">
@@ -22,7 +22,7 @@
 		            </div>
 		            <!-- /Duplicate to create more slides -->
 		            <div class="slide">
-		                <img src="assets/images/slider-bg.jpg" alt=""/>
+		                <img src="images/slider-bg.jpg" alt=""/>
 		                <div class="slide_content">
 		                     <div class="slide_content_wrap">
 		                        <!-- Text title -->
@@ -139,12 +139,12 @@
 		<div class="grid1_of_3">
 			<div class="grid1_of_3_img">
 				<a href="details">
-					<img src="{{ $picture}}" alt="" />
+					<img src="{{ $picture}}" alt="" height="220"/>
 					<span class="next"> </span>
 				</a>
-			</div>
+			</div> 
 			<h4><a href="#">{{ucfirst(trim($Categorie->name))}}<span>{{$price}} Dhs</span></a></h4>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			<p align="justify">{{$Categorie->description}}</p>
 		</div>
 
 	@endforeach
@@ -152,5 +152,7 @@
 		<div class="clear"></div>
 	</div>	
 </div>
-</div>		
+</div>	
+
+
 @endsection

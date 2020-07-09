@@ -82,7 +82,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li <?php if($page == "/reservation"){echo 'class="active"';} ?>><a href="reservation">reservation</a></li> |
 				<li <?php if($page == "/activities"){echo 'class="active"';} ?>><a href="activities">activities</a></li> |
 				<li <?php if($page == "/contact"){echo 'class="active"';} ?>><a href="contact">contact</a></li>
-				<li><a href="login">login</a></li>
+
+<!-- Authentication Links -->
+	@guest
+                <li class="nav-item">
+                    <a class="nav-link" href="/acceuilclient">{{ __('Login') }}</a>
+                </li>
+      
+                <li class="nav-item">
+                    <a class="nav-link" href="register">{{ __('Register') }}</a>
+                </li>
+       
+	@endguest
+    
+	@auth
+                <li class="nav-item dropdown">
+                	<a style="color:white;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+        			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('auth.logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Déconnexion') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+									{{ csrf_field() }}
+                    </form>
+                                
+            		<div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Mon profil</a>
+           			</div>
+					</div>
+            	</li>
+    @endauth
+	
+<!-- fin Authentication Links -->
 				<div class="clear"></div>
 			</ul>
 			<!-- start profile_details -->
@@ -104,11 +141,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="top-nav">
 		<nav class="clearfix">
 				<ul>
-				<li class="active"><a href="/">hotel</a></li> 
-				<li><a href="rooms">rooms & suits</a></li> 
-				<li><a href="reservation">reservation</a></li> 
-				<li><a href="activities">activities</a></li> 
-				<li><a href="contact">contact</a></li>
+				<li <?php if($page == "/"){echo 'class="active"';} ?>><a href="/">hotel</a></li> |
+				<li <?php if($page == "/rooms"){echo 'class="active"';} ?>><a href="rooms">rooms & suits</a></li> |
+				<li <?php if($page == "/reservation"){echo 'class="active"';} ?>><a href="reservation">reservation</a></li> |
+				<li <?php if($page == "/activities"){echo 'class="active"';} ?>><a href="activities">activities</a></li> |
+				<li <?php if($page == "/contact"){echo 'class="active"';} ?>><a href="contact">contact</a></li>
+				<li><a href="/acceuilclient">login</a></li>
 				
 				</ul>
 				<a href="#" id="pull">Menu</a>
@@ -133,7 +171,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="rooms">rooms & suits</a></li>
 					<li><a href="reservation">reservation</a></li>
 					<li><a href="contact">Contact</a></li>
-					<li><a href="/admin">Administration</a></li>
 				</ul>
 			</div>
 			<div class="soc_icons">
