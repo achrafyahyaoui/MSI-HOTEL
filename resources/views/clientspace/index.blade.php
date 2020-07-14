@@ -13,7 +13,7 @@
 		                <div class="slide_content">
 		                    <div class="slide_content_wrap">
 		                        <!-- Text title -->
-		                        <h4 class="title"><i class="bg"></i>Paradise Hotel <span class="hide"></span></h4>
+		                        <h4 class="title"><i class="bg"></i>MSI Hotel <span class="hide"></span></h4>
 		                        <h5 class="title1"><i class="bg"></i>Réservation en ligne <span class="hide" ></span></h5>
 		                        <!-- /Text title -->
 		                    </div>
@@ -26,7 +26,7 @@
 		                <div class="slide_content">
 		                     <div class="slide_content_wrap">
 		                        <!-- Text title -->
-		                        <h4 class="title"><i class="bg"></i>Paradise hotel <span class="hide">  </span></h4>
+		                        <h4 class="title"><i class="bg"></i>MSI hotel <span class="hide">  </span></h4>
 		                        <h5 class="title1"><i class="bg"></i> Le meilleur tarif pour votre séjour <span class="hide"></span> </h5>
 		                        <!-- /Text title -->
 		                    </div>
