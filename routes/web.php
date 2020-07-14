@@ -4,6 +4,8 @@ Route::get('/admin', function () {
 });
 Route::get('/','AcceuilclientController@index');
 
+Route::post('/find_rooms_client', 'FindRoomsClientController@index')->name('find_rooms_client.index');
+
 Route::get('/reservations', function () {
     return view('/reservations');
 });
@@ -82,6 +84,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     //Route::resource('/find_rooms', 'Admin\FindRoomsController', ['except' => 'create']);
     Route::get('/find_rooms', 'Admin\FindRoomsController@index')->name('find_rooms.index');
     Route::post('/find_rooms', 'Admin\FindRoomsController@index');
+
+    
     /*Route::get('/bookings/create/', [
         'as' => 'find_rooms.create',
         'uses' => 'Admin\BookingsController@create'

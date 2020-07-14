@@ -20,8 +20,8 @@ class CreateRoomPicturesTable extends Migration
             $table->string('picture');
             $table->text('description')->nullable();
 
-            $table->integer('room_id')->unsigned()->nullable();
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
     }
