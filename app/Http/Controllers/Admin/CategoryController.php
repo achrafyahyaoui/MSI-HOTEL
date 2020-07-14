@@ -30,9 +30,10 @@ class CategoryController extends Controller
         if (! Gate::allows('category_create')) {
             return abort(401);
         }
-
+var_dump($request->description);
         $category = Category::create([
-            'name'=> $request->name
+            'name'=> $request->name,
+            'description' => $request->description
         ]);
         return redirect('/admin/categories');
 

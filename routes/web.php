@@ -4,6 +4,9 @@ Route::get('/admin', function () {
 });
 Route::get('/','AcceuilclientController@index');
 
+Route::get('/data','AcceuilclientController@create');
+
+
 Route::post('/find_rooms_client', 'FindRoomsClientController@index')->name('find_rooms_client.index');
 
 Route::get('/reservations', function () {

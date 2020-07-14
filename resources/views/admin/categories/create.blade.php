@@ -14,6 +14,8 @@
                 <div class="col-xs-12 form-group">
                     {!! Form::label('name', trans('quickadmin.categories.fields.name').'', ['class' => 'control-label']) !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('description', trans('quickadmin.categories.fields.description').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('description', old('name'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('name'))
                         <p class="help-block">
