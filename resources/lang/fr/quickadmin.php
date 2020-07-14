@@ -54,12 +54,16 @@ return [
 			'floor' => 'Etage',
 			'description' => 'Description',
 			'category' => 'Catégories',
+			'price' =>'prix'
 		],
 	],
 	
 	'categories' => [
 		'title' => 'Catégories',
 		'fields' => [
+			'name' => 'Catégorie',
+			'description' => 'Description',
+			'price' => 'prix',
 			
 		],
 	],

@@ -32,12 +32,13 @@
                         @can('country_delete')
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
-
+                    
                         <th>@lang('quickadmin.categories.fields.name')</th>
+                        <th>@lang('quickadmin.categories.fields.description')</th>
                         @if( request('show_deleted') == 1 )
-                        <th>&nbsp;</th>
+                        <th>Actions</th>
                         @else
-                        <th>&nbsp;</th>
+                        <th>Actions</th>
                         @endif
                     </tr>
                 </thead>
@@ -50,6 +51,7 @@
                                     @if ( request('show_deleted') != 1 )<td></td>@endif
                                 @endcan
                                 <td field-key='name'>{{ $country->name }}</td>
+                                <td field-key='description'>{{ $country->description }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     @can('country_delete')

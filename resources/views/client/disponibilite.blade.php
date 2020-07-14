@@ -84,7 +84,8 @@
                     <th></th>
                     <th>@lang('quickadmin.rooms.fields.room-number')</th>
                     <th>@lang('quickadmin.rooms.fields.floor')</th>
-                    <th>@lang('quickadmin.rooms.fields.description')</th>
+                    <th>@lang('quickadmin.rooms.fields.category')</th>
+					<th>@lang('quickadmin.rooms.fields.price')</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -94,7 +95,15 @@
                             <td field-key='room_number'>{{ $room->room_number }}</td>
                             <td field-key='floor'>{{ $room->floor }}</td>
                             <td field-key='description'>{!! $room->description !!}</td>
-                            <td>
+							@foreach($room_prices as $room_price)
+							@if($room_price->category_id = $room->category_id)
+
+
+								<td field-key='description'>{{$room_price->price}} Dhs</td>
+
+							@endif
+							@endforeach
+							<td>
                                 @can('booking_create')
                                     <button class="btn btn-primary">
                                         <a style="color: #ffffff;" href="{{ route('admin.bookings.create',

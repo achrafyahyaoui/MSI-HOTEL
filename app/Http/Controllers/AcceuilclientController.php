@@ -37,7 +37,21 @@ class AcceuilclientController extends Controller
      */
     public function create()
     {
-        //
+        $Category = new Category;
+        $Categories = Category::all();
+
+        $room_picture = new Room_picture;
+        $room_pictures = Room_picture::all();
+        // Reste de determiner les prix en vigeur
+        $room_price = new room_price;
+        $room_prices = room_price::all();
+
+        //return view('clientspace.index', compact('Categories'))
+                   //->with('room_pictures',$room_pictures)
+                   // ->with('room_prices',$room_prices);
+        return ['Categories' => $Categories,
+        'room_pictures' => $room_pictures,
+        'room_prices' => $room_prices];
     }
 
     /**
