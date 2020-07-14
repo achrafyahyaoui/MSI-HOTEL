@@ -21,8 +21,8 @@ class CreateRoomPricesTable extends Migration
             $table->datetime('time_to')->nullable();
             $table->integer('price')->nullable();
 
-            $table->integer('categorie_id')->unsigned()->nullable();
-            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
     }

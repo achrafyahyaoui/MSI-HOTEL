@@ -29,4 +29,6 @@ class FindRoomsController extends Controller
         }
         return view('admin.find_rooms.index', compact('rooms', 'time_from', 'time_to'));
     }
+
+    
 }

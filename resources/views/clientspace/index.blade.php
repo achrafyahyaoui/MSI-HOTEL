@@ -13,8 +13,8 @@
 		                <div class="slide_content">
 		                    <div class="slide_content_wrap">
 		                        <!-- Text title -->
-		                        <h4 class="title"><i class="bg"></i>My space  <span class="hide">dummy text</span></h4>
-		                        <h5 class="title1"><i class="bg"></i>Morbi justo <span class="hide" >condimentum accumsan</span></h5>
+		                        <h4 class="title"><i class="bg"></i>Paradise Hotel <span class="hide"></span></h4>
+		                        <h5 class="title1"><i class="bg"></i>Réservation en ligne <span class="hide" ></span></h5>
 		                        <!-- /Text title -->
 		                    </div>
 		                </div>
@@ -26,8 +26,8 @@
 		                <div class="slide_content">
 		                     <div class="slide_content_wrap">
 		                        <!-- Text title -->
-		                        <h4 class="title"><i class="bg"></i>Morbi justo <span class="hide"> condimentum </span>text</h4>
-		                        <h5 class="title1"><i class="bg"></i>Lorem Ipsum is <span class="hide">simply dummy text</span> </h5>
+		                        <h4 class="title"><i class="bg"></i>Paradise hotel <span class="hide">  </span></h4>
+		                        <h5 class="title1"><i class="bg"></i> Le meilleur tarif pour votre séjour <span class="hide"></span> </h5>
 		                        <!-- /Text title -->
 		                    </div>
 		                </div>
@@ -46,17 +46,19 @@
 	<div class="online_reservation">
 	<div class="b_room">
 		<div class="booking_room">
-			<h4>book a room online</h4>
+			<h4>Réserver une chambre en ligne</h4>
 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
 		</div>
 		<div class="reservation">
 			<ul>
 				<li class="span1_of_1">
-					<h5>type of room:</h5>
+					<h5>type de chambre:</h5>
 					<!----------start section_room----------->
+					{!! Form::open(['method' => 'post', 'route' => ['find_rooms_client.index']]) !!}
+
 					<div class="section_room">
-						<select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Select a type of room</option>
+						<select name="cat" id="country" onchange="change_country(this.value)" class="frm-field required">
+							<option value="null">Selectionner un type</option>
 							@foreach($Categories as $Categorie)
 				           		 <option value="{{$Categorie->id}}">{{ucfirst(trim($Categorie->name))}}</option>
 							@endforeach
@@ -66,22 +68,22 @@
 				<li  class="span1_of_1 left">
 					<h5>check-in-date:</h5>
 					<div class="book_date">
-						<form>
-							<input class="date" id="datepicker" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
-						</form>
+						
+							<input class="date" name="time_from" id="datepicker" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+						
 
 					</div>					
 				</li>
 				<li  class="span1_of_1 left">
 					<h5>check-out-date:</h5>
 					<div class="book_date">
-						<form>
-							<input class="date" id="datepicker1" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
-						</form>
+					
+							<input class="date" name="time_to" id="datepicker1" type="text" value="DD/MM/YY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'DD/MM/YY';}">
+						
 					</div>		
 				</li>
-				<li class="span1_of_2 left">
-					<h5>Adults:</h5>
+				<li class="span1_of_1 left">
+					<h5>Adultes:</h5>
 					<!----------start section_room----------->
 					<div class="section_room">
 						<select id="country" onchange="change_country(this.value)" class="frm-field required">
@@ -92,11 +94,11 @@
 		        		</select>
 					</div>					
 				</li>
-				<li class="span1_of_3">
+				<li class="span1_of_1">
 					<div class="date_btn">
-						<form>
-							<input type="submit" value="check availibility" />
-						</form>
+						
+                    {!! Form::submit('Voir la disponibilité', ['class' => 'btn btn-primary']) !!}
+					{!! Form::close() !!}
 					</div>
 				</li>
 				<div class="clear"></div>

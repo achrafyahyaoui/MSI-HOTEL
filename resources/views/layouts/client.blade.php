@@ -60,27 +60,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     		});
 		});
 </script>
+@include('partials.head')
 </head>
 <body>
 <!-- start header -->
-<div class="header_bg">
-<div class="wrap">
-	<div class="header">
+<div class="header_bg" >
+<div class="wrap" >
+	<div class="header" >
 		<div class="logo">
 			<a href="index"><img src="assets/images/logo.png" alt=""></a>
 		</div>
-		<div class="h_right">
+		<div class="h_right" >
 			<!--start menu -->
 			<?php
       // On recupere l'URL de la page pour ensuite affecter class = "active" aux liens de nav
       $page = $_SERVER['REQUEST_URI'];
 	  $page = str_replace("/siteyetistudio/", "",$page); ?>
 	  
-			<ul class="menu">
-				<li <?php if($page == "/"){echo 'class="active"';} ?>><a href="/">hotel</a></li> |
-				<li <?php if($page == "/rooms"){echo 'class="active"';} ?>><a href="rooms">rooms & suits</a></li> |
-				<li <?php if($page == "/reservation"){echo 'class="active"';} ?>><a href="reservation">reservation</a></li> |
-				<li <?php if($page == "/activities"){echo 'class="active"';} ?>><a href="activities">activities</a></li> |
+			<ul class="menu" >
+				<li <?php if($page == "/"){echo 'class="active"';} ?>><a href="/">hôtel</a></li> |
+				<li <?php if($page == "/rooms"){echo 'class="active"';} ?>><a href="rooms">Chambres & suits</a></li> |
+				<li <?php if($page == "/reservation"){echo 'class="active"';} ?>><a href="reservation">réservation</a></li> |
+				<li <?php if($page == "/activities"){echo 'class="active"';} ?>><a href="activities">activités</a></li> |
 				<li <?php if($page == "/contact"){echo 'class="active"';} ?>><a href="contact">contact</a></li>
 
 <!-- Authentication Links -->
@@ -96,27 +97,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	@endguest
     
 	@auth
-                <li class="nav-item dropdown">
-                	<a style="color:white;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-        			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('auth.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+				<li class="nav-item">
+                    <a class="nav-link" href="register">Bienvenue   {{ Auth::user()->name }}</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="{{ route('auth.logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
                                         {{ __('Déconnexion') }}
                     </a>
-
-                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                </li>
+				
+				    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
 									{{ csrf_field() }}
                     </form>
                                 
-            		<div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">Mon profil</a>
-           			</div>
-					</div>
-            	</li>
+            		
     @endauth
 	
 <!-- fin Authentication Links -->
@@ -127,8 +123,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="row">
 							<div class="grid_3 columns">
 								<select class="custom-select" id="select-1">
-									<option selected="selected">EN</option>
-									<option>AR</option>
+									<option selected="selected">FR</option>
+									<option>EN</option>
 									<option>FR</option>
 									
 									

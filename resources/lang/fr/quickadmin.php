@@ -1,14 +1,90 @@
 <?php
 
 return [
-		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',		],	],
-		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',		],	],
-		'countries' => [		'title' => 'Countries',		'fields' => [			'shortcode' => 'Shortcode',			'title' => 'Title',			'name' => 'Name',		],	],
-		'customers' => [		'title' => 'Customers',		'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',			'address' => 'Address',			'phone' => 'Phone',			'email' => 'Email',			'country' => 'Country',		],	],
-		'rooms' => [		'title' => 'Rooms',		'fields' => [			'room-number' => 'Room number',			'floor' => 'Floor',			'description' => 'Description',		],	],
-		'bookings' => [		'title' => 'Bookings',		'fields' => [			'customer' => 'Customer',			'room' => 'Room',			'time-from' => 'Time from',			'time-to' => 'Time to',			'additional-information' => 'Additional information',		],	],
-		'find-room' => [		'title' => 'Find room',		'fields' => [		],	],
+	
+	'user-management' => [
+		'title' => 'Gestion des utilisateurs',
+		'fields' => [
+		],
+	],
+	
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	
+	'users' => [
+		'title' => 'utilisateur',
+		'fields' => [
+			'name' => 'Name',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'remember-token' => 'Remember token',
+		],
+	],
+	
+	'countries' => [
+		'title' => 'Pays',
+		'fields' => [
+			'shortcode' => 'Shortcode',
+			'title' => 'Title',
+			'name' => 'Name',
+		],
+	],
+	
+	'customers' => [
+		'title' => 'Clients',
+		'fields' => [
+			'first-name' => 'Prénom',
+			'last-name' => 'Nom',
+			'address' => 'Addresse',
+			'phone' => 'Tél',
+			'email' => 'Email',
+			'country' => 'Pays',
+		],
+	],
+	
+	'rooms' => [
+		'title' => 'Chambres',
+		'fields' => [
+			'room-number' => 'Numéro de chambre',
+			'floor' => 'Etage',
+			'description' => 'Description',
+			'category' => 'Catégories',
+		],
+	],
+	
+	'categories' => [
+		'title' => 'Catégories',
+		'fields' => [
+			
+		],
+	],
+
+	'bookings' => [
+		'title' => 'Réservations',
+		'fields' => [
+			'customer' => 'Client',
+			'room' => 'Chambre',
+			'time-from' => 'Date de',
+			'time-to' => 'Date à',
+			'amount' => 'Montant',
+			'additional-information' => 'Informations complémentaires',
+		],
+	],
+	
+	
+	'find-room' => [
+		'title' => 'Liste des chambres disponibles',
+		'fields' => [
+		],
+        'no_rooms_found' => 'Pas de chambre pour ces dates.',
+        'book_room' => 'Réserver la chambre',
+	],
+	
 	'qa_create' => 'Créer',
 	'qa_save' => 'Enregistrer',
 	'qa_edit' => 'Modifier',
