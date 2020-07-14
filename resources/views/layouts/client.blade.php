@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>The Paradise-Hotel Website Template | Hotel :: w3layouts</title>
+<title>The MSI-Hotel</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -68,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="wrap" >
 	<div class="header" >
 		<div class="logo">
-			<a href="index"><img src="assets/images/logo.png" alt=""></a>
+			<a href="index"><img src="assets/images/msi_logo3.png" alt="" height=80 width= 160></a>
 		</div>
 		<div class="h_right" >
 			<!--start menu -->
